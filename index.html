@@ -5,11 +5,34 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Welcome to Refinery Process Explorer</h1>
-  <p>Select a process:</p>
-  <button onclick="location.href='cdu.html'">Crude Distillation Unit (CDU)</button>
-  <button onclick="location.href='vdu.html'">Vacuum Distillation Unit (VDU)</button>
-  <br><br>
-  <a href="contact.html">Contact Me</a>
+  <header>
+    <h1>Refinery Process Explorer</h1>
+    <nav>
+      <ul class="dropdown">
+        <li><a href="#">Select Process</a>
+          <ul class="dropdown-content">
+            <li><a href="cdu.html">Crude Distillation Unit (CDU)</a></li>
+            <li><a href="vdu.html">Vacuum Distillation Unit (VDU)</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <p>Welcome to the educational portal for understanding complex refinery processes. Choose a unit from the dropdown menu above.</p>
+    <div id="map"></div>
+  </main>
+  <script>
+    function initMap() {
+      var center = {lat: 7.0012, lng: 79.9205};
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 14,
+        center: center
+      });
+      var marker = new google.maps.Marker({position: center, map: map});
+    }
+  </script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUMMYKEY&callback=initMap"></script>
 </body>
 </html>
